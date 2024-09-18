@@ -27,6 +27,62 @@ if(isset($_POST["cari"])){
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
+    <style>
+        *{
+            background-color:azure;
+        }
+        
+        h1{
+            text-align: center;
+        }
+        
+        a{
+            margin-right: 10px;
+        }
+        
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #keyword{
+            padding: 5px;
+        }
+        
+        #tombolCari{
+            padding: 5px 10px;
+            border: none;
+            background-color: green;
+            color: white;
+            display:none;
+        }
+
+        #loading{
+            width:30px;
+            position:absolute;
+            right:115px;
+            z-index: -1;
+            display:none;
+        }
+        
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td{
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:hover{
+            background-color: #f5f5f5;
+        }
+        
+    
+    </style>
 </head>
 <body>
     
@@ -52,16 +108,20 @@ if(isset($_POST["cari"])){
         <?php endif; ?>
     <?php endfor; ?>
     
-    <?php if($halamanAktif < $jumlahHalaman): ?>
+<?php if($halamanAktif < $jumlahHalaman): ?>
         <a href="?halaman=<?= $halamanAktif + 1; ?>">&raquo</a>
-    <?php endif; ?>
+<?php endif; ?>
+
+
     
     <hr>
     
     <div>
         <form action="" method="POST">
             <input type="text" name="keyword" size="40" placeholder="Masukkan Kata Kunci.." autofocus autocomplete id="keyword">
-            <button type="submit" name="cari" id="tombol-cari">Cari</button>
+            <button type="submit" name="cari" id="tombolCari">Cari</button>
+
+            <img src="img/loading.gif" id="loading">
         </form>
     </div>
     
@@ -100,6 +160,7 @@ if(isset($_POST["cari"])){
        </table>
     </div>
     
-    <script src="ajax/script.js"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

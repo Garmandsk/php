@@ -1,9 +1,12 @@
 <?php
 
-include "../functions.php";
+/* Digunakan untuk melihat animasi loding
+sleep(1);
+*/
+
+include "functions.php";
 
 $keyword = $_GET["keyword"];
-var_dump($keyword);
 
 $query = "SELECT * FROM mahasiswa
                 WHERE
@@ -36,7 +39,7 @@ $mahasiswa = query($query);
             <td><?= $i?></td>
             <td><a href="ubah.php?id=<?= $row["id"]; ?>&nama=<?= $row["nama"]; ?>&nim=<?= $row["nim"]; ?>&email=<?= $row["email"]; ?>&jurusan=<?= $row["jurusan"]; ?>&gambar=<?= $row["gambar"]; ?>">Ubah</a> | 
                 <a href="hapus.php?id=<?= $row["id"]; ?>&" >Hapus</a></td>
-            <td><img src="../img/<?php echo $row["gambar"] ?>" alt="Foto Profil" width="40"></td>
+            <td><img src="img/<?= $row["gambar"] ?>" alt="Foto Profil" width="40"></td>
             <td>
                 <?= $row["nama"]; ?>
             </td>
