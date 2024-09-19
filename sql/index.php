@@ -93,7 +93,7 @@ if(isset($_POST["cari"])){
 </head>
 <body>
     
-    <a href="logout.php" id="logout">Logout</a> <span id="garis">|</span> <a href ="cetak.php" id="cetak">Cetak</a>
+    <a href="logout.php" id="logout">Logout</a> <span id="garis">|</span> <a href ="cetak.php" id="cetak" target="_blank">Cetak</a>
         
     <h1>Database Admin</h1>
     
