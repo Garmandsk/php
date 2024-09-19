@@ -169,4 +169,3 @@ function registrasi($data){
     return mysqli_query($conn, $query);
 }
     
-?>
